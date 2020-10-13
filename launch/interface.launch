@@ -1,0 +1,5 @@
+<launch>
+  <group ns="UzL_USV">
+	<node pkg="boat_pkg" name="serialInterface" type="serialInterface" output="screen" />
+  </group>
+</launch>

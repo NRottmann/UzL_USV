@@ -1,0 +1,10 @@
+<launch>
+	<include file="$(find boat_pkg)/launch/interface.launch" />
+        <include file="$(find boat_pkg)/launch/camera.launch" />
+	<include file="$(find nimbro_topic_transport)/launch/sender.launch" />
+
+        <node pkg="rosbag" name="rosbag_record" type="record" args=-O home/pi/bagfiles 
+              /UzL_USV/gps /UzL_USV/mag /UzL_USV/range_depth /UzL_USV/temperature /UzL_USV/usb_cam/image_raw/compressed 
+        />
+
+</launch>
