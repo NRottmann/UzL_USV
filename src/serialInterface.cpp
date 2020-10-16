@@ -28,7 +28,7 @@
 using namespace std;
 serial::Serial ser;
 
-// Function for splitting 
+// Function for splitting
 template <class Container>
 void split_string(const string& str, Container& cont, char delim = ',')
 {
@@ -85,7 +85,7 @@ int main(int argc, char** argv) {
 	ros::init(argc, argv, "serialInterface");
 	ros::NodeHandle nh;
 	ros::NodeHandle nhp("~");
-		
+
 	// Publishers
 	ros::Publisher pubNavSatFix = nh.advertise<sensor_msgs::NavSatFix>("gps", 10);
 	ros::Publisher pubMagneticField = nh.advertise<sensor_msgs::MagneticField>("mag", 10);
@@ -146,7 +146,7 @@ int main(int argc, char** argv) {
 					/* for(int ll=0; ll<words.size(); ll++) {
 						ROS_INFO("%s", words[ll].c_str());
 					} */
-					
+
 
 					if(words.size() == 19) {
 					// GPS
@@ -211,7 +211,7 @@ int main(int argc, char** argv) {
 
 					// Safety
 					int battery = stoi(words[14].c_str());
-                    float voltage = stof(words[15].c_str());
+          float voltage = stof(words[15].c_str());
 					float current = stof(words[16].c_str());
 					float charge = stof(words[17].c_str());
 					int water = stoi(words[18].c_str());
